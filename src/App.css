@@ -1,38 +1,102 @@
-.App {
+/* .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+} */
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.button-row{
+  display:'flex';
+  height: 50px;
+}
+/* Add styles for the X and O symbols */
+.square-button.x {
+  color: #f00; /* Red for X */
+  /* text-decoration: line-through; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.straight {
+  position: relative;
+  display: inline-block;
+}
+
+.straight::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  /* right: 0; */
+  left: 0;
+  width: 79px;
+  height: 2px; /* Line thickness */
+  background-color: green; /* Line color */
+  transform-origin: 0 0;
+}
+
+.vertical {
+  position: relative;
+  display: inline-block;
+}
+
+.vertical::after {
+  content: '';
+  position: absolute;
+  /* top: 1%; */
+  bottom: 100%;
+  left: 51%;
+  width: 80px;
+  height: 2px; /* Line thickness */
+  background-color: green; /* Line color */
+  transform-origin: 0 0;
+  transform: rotate(90deg); /*Rotate the line by 45 degrees*/
+}
+
+.line45 {
+  position: relative;
+  display: inline-block;
+}
+
+.line45::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 110px;
+  height: 2px; /* Line thickness */
+  background-color: green; /* Line color */
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+}
+
+.line135 {
+  position: relative;
+  display: inline-block;
+}
+
+.line135::after {
+  content: '';
+  position: absolute;
+  bottom: 99%;
+  left: 78px;
+  width: 110px;
+  height: 2px; /* Line thickness */
+  background-color: green; /* Line color */
+  transform-origin: 0 0;
+  transform: rotate(135deg);
+
+}
+.square-button.o {
+  color: #00f; /* Blue for O */
+}
+
+/* Add hover effect for buttons */
+.square-button:hover {
+  background-color: #eee;
 }
